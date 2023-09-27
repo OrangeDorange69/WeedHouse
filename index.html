@@ -4,23 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Weedhouse: The game</title>
+    <title>Weedhouse: The Game</title>
 </head>
 <body>
-    <div id="game-container">
-        <h1>Weedhouse: The game</h1>
-        <p>Postava Yzo se snaží najít 10 semínek CBD. Pomůžete mu?</p>
-        <button id="start-button">Začít</button>
+    <div id="game-container" class="centered">
+        <h1 class="title">Weedhouse: The Game</h1>
+        <div id="intro-container" style="display: none;">
+            <p class="intro-text">Yzo se musel vrátit zpět na svou planetu po dlouhé cestě vesmírem.</p>
+            <p class="intro-text">Během cesty postrácel všechna semínka CBD, která měl s sebou.</p>
+            <p class="intro-text">Teď se musíš stát průvodcem Yzovi a pomoci mu najít 10 semínek CBD, abychom mu mohli zachránit jeho planetu!</p>
+            <p class="intro-text">Yzo na své planetě pro tebe má překvapení!</p>
+            <img src="introimage.png" alt="" srcset="" width="300" height="300">
+        </div>
+        <button id="start-button" class="button-style">Začít hru</button>
         <div id="question-container" style="display: none;">
-            <h2>Otázka:</h2>
-            <p id="question"></p>
-            <div id="answers">
+            <h2 class="question-heading">Otázka:</h2>
+            <p id="question" class="question"></p>
+            <div id="answers" class="answers">
                 <button class="answer-button" id="answer1"></button>
                 <button class="answer-button" id="answer2"></button>
                 <button class="answer-button" id="answer3"></button>
             </div>
         </div>
-        <p id="score">Semínka CBD: <span id="seed-count">0</span>/10</p>
+        <p id="score" class="score">Semínka CBD: <span id="seed-count">0</span>/10</p>
+
+        <div id="video-container" style="display: none;">
+            <video id="video" width="440" height="360" autoplay loop muted>
+                <source src="yzomandias.mp4" type="video/mp4">
+            </video>
+            <p id="message"></p>
+            <button id="restart-button" class="button-style" onclick="resetGame()">Resetovat</button>
+        </div>
+
+        <div id="mid-message" style="display: none;">
+            <video id="video" width="440" height="360" autoplay loop muted>
+                <source src="milionplus-rap.mp4" type="video/mp4">
+            </video>
+            <p id="message2"></p>
+            <button id="restart-button" class="button-style" onclick="resetGame()">Resetovat</button>
+        </div>
+
+        <div id="win-message" style="display: none;">
+            <button id="restart-button" class="button-style" onclick="resetGame()">Začít znovu</button>
+            <p class="win-text">Yzo ti děkuje! Pomohl si mu najít cestu na jeho planetu! Jako odměnu tě jmenuje hráčem roku!</p>
+            <img src="yzo_win.png" alt="Yzo Win" class="win-image" width="500" height="500">
+        </div>
+        <button id="reset-button" class="button-style" style="display: none;">Resetovat</button>
     </div>
     <script src="script.js"></script>
 </body>
