@@ -66,9 +66,9 @@ const questions = [
       correctAnswer: "13",
     },
     {
-      question: "Kolik tracku se nachází na YZOMANDIAS II: Zpátky na svojí planetu?",
-      answers: ["13", "8", "19"],
-      correctAnswer: "13",
+      question: "Která z těchto vybraných písní je nejkratší?",
+      answers: ["Flexim jako gott", "Pod vlivem skit", "Cykloskit"],
+      correctAnswer: "Pod vlivem skit",
     },
     {
       question: "Kdo z beatmakeru dělal všechny beaty? na YZOMANDIAS II: Zpátky na svojí planetu?",
