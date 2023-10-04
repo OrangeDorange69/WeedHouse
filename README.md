@@ -24,8 +24,8 @@ This code, including all its associated files and documentation (hereinafter ref
    4.2. The original author(s) and copyright holder(s) disclaim all liability regarding the Code's accuracy, completeness, or fitness for a particular purpose.
 
 5. Governing Law:
-   5.1. This License shall be governed by and construed in accordance with the laws of [Your Jurisdiction].
-   5.2. Any disputes arising under or in connection with this License shall be subject to the exclusive jurisdiction of the courts of [Your Jurisdiction].
+   5.1. This License shall be governed by and construed in accordance with the laws of Czech republic.
+   5.2. Any disputes arising under or in connection with this License shall be subject to the exclusive jurisdiction of the courts of Czech republic.
 
 6. Entire Agreement:
    6.1. This License constitutes the entire agreement between the parties concerning the subject matter hereof and supersedes all prior or contemporaneous agreements, representations, warranties, and understandings.
