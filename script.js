@@ -66,9 +66,9 @@ const questions = [
       correctAnswer: "13",
     },
     {
-      question: "Která z těchto vybraných písní je nejkratší?",
-      answers: ["Flexim jako gott", "Pod vlivem skit", "Cykloskit"],
-      correctAnswer: "Pod vlivem skit",
+      question: "Kolik tracku se nachází na YZOMANDIAS II: Zpátky na svojí planetu?",
+      answers: ["13", "8", "19"],
+      correctAnswer: "13",
     },
     {
       question: "Kdo z beatmakeru dělal všechny beaty? na YZOMANDIAS II: Zpátky na svojí planetu?",
@@ -76,6 +76,7 @@ const questions = [
       correctAnswer: "Decky",
     }
 ];
+
 
   
   let currentQuestionIndex = 0;
@@ -92,6 +93,15 @@ const questions = [
   startButton.addEventListener("click", startGame);
   resetButton.addEventListener("click", resetGame);
   
+  window.alert(`Vítej v naší hře na poctu Yzovi! Tvůrci: Džon, Advy, Dejvis :)`);
+  const nameOfPlayer = window.prompt(`Jak se jmenuješ, příteli?` , `Yzo`);
+  window.alert(`Vítám tě, ${nameOfPlayer}, zajímá tě to, co je neznámé, tajemné, nevysvětlitelné, proto jsi přece tady. A my teď poprvé řekneme celou pravdu o tom, co se stalo. `);
+
+  const playerNameDiv = document.createElement("div");
+  playerNameDiv.textContent = `Jméno hráče: ${nameOfPlayer}`;
+  playerNameDiv.id = "nameofUser";
+  document.getElementById("game-container").insertBefore(playerNameDiv, document.querySelector(".title"));
+
   const introMusic = new Audio('krajni.mp3'); 
   
   function playIntroMusic() {
@@ -104,6 +114,7 @@ const questions = [
   }
   
   function startGame() {
+    playerNameDiv.style.display = "none";
     startButton.style.display = "none";
     introContainer.style.display = "block";
     seedCount = 0;
