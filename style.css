@@ -1,33 +1,53 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #989898;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #383838;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s;
+    transition-timing-function: ease-in-out;
 }
 
 #game-container {
     text-align: center;
-    background-color: #fff;
+    background-color: #5e5e5e;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 20px auto; 
+    transition: background-color 0.5s ease-in-out;
 }
 
 
 .title {
-    color: #009688;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #1caf39, #007d72);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: font-size 0.5s, color 0.5s;
 }
+
+.title:hover {
+    font-size: 52px;
+    background: linear-gradient(45deg, #007d72, #1caf39);
+    color: #444444;
+}
+
 
 #intro-container {
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: #5e5e5e;
     border-radius: 10px;
     margin-top: 20px;
+    transition: background-color 0.5s;
+    transition-timing-function: ease-in-out;
 }
 
 .intro-text {
@@ -37,29 +57,33 @@ body {
 }
 
 #start-button {
-    background-color: #009688;
+    display: inline-block;
+    background-color: #1caf39;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 18px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s, box-shadow 0.3s;
 }
 
 #start-button:hover {
-    background-color: #007d72;
+    background-color: #474747;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .question-heading {
-    color: #009688;
-    font-size: 20px;
+    color: #1caf39;
+    font-size: 24px;
     margin-top: 20px;
+    transition: color 0.5s;
 }
 
 .question {
     color: #333;
-    font-size: 18px;
+    font-size: 20px;
     margin: 10px 0;
 }
 
@@ -70,56 +94,87 @@ body {
 }
 
 .answer-button {
-    background-color: #009688;
+    display: inline-block;
+    background-color: #1caf39;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 18px;
     border: none;
     border-radius: 5px;
-    margin: 5px 0;
+    margin: 10px 0;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s, box-shadow 0.3s;
 }
 
 .answer-button:hover {
-    background-color: #007d72;
+    background-color: #474747;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 #score {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 20px;
     color: #333;
-    font-size: 18px;
-    margin-top: 20PX;
+    text-align: center;
 }
 
+#score img {
+    width: 21px;
+    height: 21px;
+    vertical-align: middle;
+}
+
+#seed-count {
+    font-size: 24px;
+    color: #1caf39;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: font-size 0.5s, color 0.5s;
+}
+
+#score:hover #seed-count {
+    font-size: 28px;
+    color: #007d72;
+    transform: scale(1.1);
+    transition: font-size 0.5s, color 0.5s, transform 0.5s;
+}
+
+
+
+
 .button-style {
-    display: block;
-    margin: 20px auto; 
-    padding: 10px 20px;
-    background-color: #009688;
-    color: #fff; 
+    display: inline-block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    background-color: #1caf39;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s, box-shadow 0.3s;
 }
 
 .button-style:hover {
-    background-color: #0056b3; 
+    background-color: #474747;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .win-text {
-    font-size: 20px; 
+    font-size: 24px;
     font-weight: bold;
-    color: #009688; 
-    margin-bottom: 10px; 
+    color: #009688;
+    margin-bottom: 10px;
+    transition: color 0.5s;
 }
 
 .win-image {
-    max-width: 100%; 
-    margin-top: 10px; 
+    max-width: 100%;
+    margin-top: 10px;
+    transition: transform 0.5s;
 }
-
-#intro-image {
-    display: none;
-}
-
