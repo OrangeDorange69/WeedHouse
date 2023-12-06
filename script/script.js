@@ -1,59 +1,52 @@
+const datum = new Date();
+
+const narozeni = window.prompt(`Dneska je ${datum.getDate()}. ${datum.getMonth() + 1}. ${datum.getFullYear()}, zadej své datum narození ve formátu YYYY-MM-DD`, `YYYY-MMMM-DDDD`);
+
+window.alert(`Jsi na živu už ${Math.floor((Date.parse(datum) - Date.parse(new Date(narozeni))) / (1000 * 60 * 60 * 24))} dní. Tvoje šťastné číslo pro dnešní den je ${Math.floor(Math.random() * 100 + 1)}.`);
+
 console.log(`Funguje!`);
 
 const MINIMUM = 15;
 const MAXIMUM = 100;
 
-
 window.alert(`Vítej v naší hře na poctu Yzovi! Tvůrci: Džon, Advy, Dejvis :) v. T-1.0 [JS TESTING] - Džony branch`);
-const nameOfPlayer = window.prompt(`Jak se jmenuješ, příteli?` , `Yzo`);
-window.alert(`Vítám tě, ${nameOfPlayer}, zajímá tě to, co je neznámé, tajemné, nevysvětlitelné, proto jsi přece tady. A my teď poprvé řekneme celou pravdu o tom, co se stalo. `);
+const nameOfPlayer = window.prompt(`Jak se jmenuješ, příteli?`, `Yzo`);
+window.alert(`Vítám tě, ${nameOfPlayer}, zajímá tě to, co je neznámé, tajemné, nevysvětlitelné, proto jsi přece tady. A my teď poprvé řekneme celou pravdu o tom, co se stalo.`);
 
-const jeZena = window.confirm(`Jsi ženaa?`);
+const jeZena = window.confirm(`Jsi žena?`);
 if (jeZena) {
-    let vekUzivatele = 2023 - window.prompt(`jakej rok ses narodila?`);
-    console.log(vekUzivatele);
-    const narozeniny = (!window.confirm(`melas uz tenhle rok narozky? :SMIRK:`));
-    if (!narozeniny) {
-        vekUzivatele --;
-    }
-    if (vekUzivatele >= MINIMUM && vekUzivatele < MAXIMUM) {
-    window.alert(`VÍTEJ ŽENO`);
-    }
-    else {
-        if (!isNaN (vekUzivatele)) {
-            window.alert(`hej ale ty sem nelez, to bys psychicky nemusela zvládnout`);
-        }
-     else {
-        window.alert(`hej ${vekUzivatele} naughty naughty!! tohle neni číslo, za trest tě pošlu na google `);
-        window.location.replace(`https://google.com`);
-     }
-    }
-}
+    let birthYear = window.prompt(`V kterém roce jsi se narodila?`);
+    let vekUzivatele = 2023 - birthYear;
 
-else {
+    const narozeniny = !window.confirm(`Měla jsi už tenhle rok narozeniny? :SMIRK:`);
+    if (!narozeniny) {
+        vekUzivatele--;
+    }
+
+    if (vekUzivatele >= MINIMUM && vekUzivatele < MAXIMUM) {
+        window.alert(`VÍTEJ ŽENO`);
+    } else {
+        if (!isNaN(vekUzivatele)) {
+            window.alert(`Hej ale ty sem nelez, to bys psychicky nemusela zvládnout`);
+        } else {
+            window.alert(`Hej ${vekUzivatele} naughty naughty!! Tohle není číslo, za trest tě pošlu na google `);
+            window.location.replace(`https://google.com`);
+        }
+    }
+} else {
     window.alert(`VÍTEJ MUŽI, JELIKOŽ JSI MUŽ, TAK NEMUSÍŠ NIC ZADÁVAT :-)`);
 }
 
+let vekUzivatele2 = window.prompt('Kolik ti je let?', 69);
 
-let vekUzivatele = window.prompt('Kolik ti je let?', 69);
-
-if (Number(vekUzivatele) === MINIMUM) {
-    window.alert(`Je ti minimální povolený věk, lucky.. Vítej!`);
-}
-
-else if (Number(vekUzivatele) > MINIMUM) {
-    window.alert(`Můžeš na web moreee, je ti o ${vekUzivatele - MINIMUM} víc než ${MINIMUM} let yoloooo!`);
-}
-
-else {
-    if (!isNaN(vekUzivatele)) {
-        window.alert(`Ty nezbedo! Sem nelez more.. Do dosažení povoleného věku ti zbývá  ${MINIMUM - vekUzivatele} yrs!!11`);      
-    }
-    else {
-        window.alert(`Strouhám strouhám strouhám sýr to je gouda  tohle neni číslo, jdi do piči ty moulo!!!`);
+if (Number(vekUzivatele2) >= MINIMUM) {
+    window.alert(`Můžeš na web moreee, je ti o ${vekUzivatele2 - MINIMUM} víc než ${MINIMUM} let yoloooo!`);
+} else {
+    if (!isNaN(vekUzivatele2)) {
+        window.alert(`Ty nezbedo! Sem nelez more.. Do dosažení povoleného věku ti zbývá  ${MINIMUM - vekUzivatele2} let!!11`);
+    } else {
+        window.alert(`Strouhám strouhám strouhám sýr to je gouda  tohle není číslo, jdi do piči ty moulo!!!`);
     }
 }
-
-
 
 console.log(`Rare jako supreme drop`);
