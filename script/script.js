@@ -2,7 +2,7 @@ const datum = new Date();
 
 const narozeni = window.prompt(`Dneska je ${datum.getDate()}. ${datum.getMonth() + 1}. ${datum.getFullYear()}, zadej své datum narození ve formátu YYYY-MM-DD`, `YYYY-MM-DDDD`);
 
-let tah = `Losovaná čísla Yzovo loterie je: `;
+let tah = `Souhrn losovaných čísel Yzovo loterie jsou: `;
 
 window.alert(`Jsi na živu už ${Math.floor((Date.parse(datum) - Date.parse(new Date(narozeni))) / (1000 * 60 * 60 * 24))} dní. Tvoje šťastné číslo pro dnešní den je ${Math.floor(Math.random() * 100 + 1)}.`);
 
@@ -51,9 +51,11 @@ if (Number(vekUzivatele2) >= MINIMUM) {
     }
 }
 
+window.alert(`Před tím, než tě pustím, zahlásíme výsledky Yzovo loterie!!!`)
+
 for (let index = 0; index < 6; index++) {
     const cislo = Math.floor(Math.random() * 60);
-    window.alert (`Výsledky čísel gamblingu Yza: ${index + 1}: ${cislo}`);
+    window.alert (`A čísla Yzovo loterie jsou: ${index + 1}: ${cislo}`);
     tah += `${cislo}, `;
 }
 
