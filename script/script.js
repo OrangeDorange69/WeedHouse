@@ -1,6 +1,9 @@
 const datum = new Date();
+console.log(`Funguje!`);
 
-const narozeni = window.prompt(`Dneska je ${datum.getDate()}. ${datum.getMonth() + 1}. ${datum.getFullYear()}, zadej své datum narození ve formátu YYYY-MM-DD`, `YYYY-MM-DDDD`);
+window.alert(`Vítej v naší hře na poctu Yzovi! Tvůrci: Džon, Advy, Dejvis :) v. T-1.0 [JS TESTING] - Džony branch`);
+
+const narozeni = window.prompt(`Dneska je ${datum.getDate()}. ${datum.getMonth() + 1}. ${datum.getFullYear()}, zadej své datum narození ve formátu YYYY-MM-DD`, `YYYY-MM-DD`);
 
 let tah = `Souhrn losovaných čísel Yzovo loterie jsou: `;
 let verifikace = false;
@@ -14,7 +17,7 @@ function generujVerifikacniCislo() {
 verifikacniCislo = generujVerifikacniCislo();
 
 while (!verifikace) {
-  const uzivatelskeCislo = window.prompt(`Proveď verifikaci zadáním následujícího čísla: ${verifikacniCislo}`);
+  const uzivatelskeCislo = window.prompt(`Proveď ověření zadáním následujícího čísla: ${verifikacniCislo}`);
 
   if (uzivatelskeCislo && Number(uzivatelskeCislo) === verifikacniCislo) {
     window.alert(`Verifikace úspěšná! Pokračujeme.`);
@@ -28,12 +31,9 @@ while (!verifikace) {
 window.alert(`Jsi na živu už ${Math.floor((Date.parse(datum) - Date.parse(new Date(narozeni))) / (1000 * 60 * 60 * 24))} dní. Tvoje šťastné číslo pro dnešní den je ${Math.floor(Math.random() * 100 + 1)}.`);
 
 
-console.log(`Funguje!`);
-
 const MINIMUM = 15;
 const MAXIMUM = 100;
 
-window.alert(`Vítej v naší hře na poctu Yzovi! Tvůrci: Džon, Advy, Dejvis :) v. T-1.0 [JS TESTING] - Džony branch`);
 const nameOfPlayer = window.prompt(`Jak se jmenuješ, příteli?`, `Yzo`);
 window.alert(`Vítám tě, ${nameOfPlayer}, zajímá tě to, co je neznámé, tajemné, nevysvětlitelné, proto jsi přece tady. A my teď poprvé řekneme celou pravdu o tom, co se stalo.`);
 
