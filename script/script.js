@@ -3,8 +3,30 @@ const datum = new Date();
 const narozeni = window.prompt(`Dneska je ${datum.getDate()}. ${datum.getMonth() + 1}. ${datum.getFullYear()}, zadej své datum narození ve formátu YYYY-MM-DD`, `YYYY-MM-DDDD`);
 
 let tah = `Souhrn losovaných čísel Yzovo loterie jsou: `;
+let verifikace = false;
+let verifikacniCislo;
+
+
+function generujVerifikacniCislo() {
+  return Math.floor(Math.random() * 1000 + 1);
+}
+
+verifikacniCislo = generujVerifikacniCislo();
+
+while (!verifikace) {
+  const uzivatelskeCislo = window.prompt(`Proveď verifikaci zadáním následujícího čísla: ${verifikacniCislo}`);
+
+  if (uzivatelskeCislo && Number(uzivatelskeCislo) === verifikacniCislo) {
+    window.alert(`Verifikace úspěšná! Pokračujeme.`);
+    verifikace = true;
+  } else {
+    window.alert(`Verifikace selhala. Zkus to znovu.`);
+    verifikacniCislo = generujVerifikacniCislo();
+  }
+}
 
 window.alert(`Jsi na živu už ${Math.floor((Date.parse(datum) - Date.parse(new Date(narozeni))) / (1000 * 60 * 60 * 24))} dní. Tvoje šťastné číslo pro dnešní den je ${Math.floor(Math.random() * 100 + 1)}.`);
+
 
 console.log(`Funguje!`);
 
