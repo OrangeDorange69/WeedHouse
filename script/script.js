@@ -1,4 +1,4 @@
-let uzivatel = window.prompt(`Jak se jmenuješ, vole?`).trim();
+let uzivatel = window.prompt(`Zadej svoje uživatelské jméno, vole?`).trim();
 if (uzivatel.includes(` `) || uzivatel.length === 0) {
     window.alert(`Uživatelské jméno nesmí mít mezery nebo být prázdné, moulo.`);
 }
