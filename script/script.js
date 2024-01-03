@@ -1,3 +1,26 @@
+let uzivatel = window.prompt(`Jak se jmenuješ, vole?`).trim();
+if (uzivatel.includes(` `) || uzivatel.length === 0) {
+    window.alert(`Uživatelské jméno nesmí mít mezery nebo být prázdné, moulo.`);
+}
+
+let email = window.prompt(`Jaký máš mail, HMM?`).trim();
+if (email.indexOf(`@`) < 1 || email.indexOf(`@`) === email.length - 1 || email.length === 0) {
+    window.alert(`Email není platný.`);
+}
+
+let heslo = window.prompt(`Zadejte heslo!`).trim();
+let hesloCislo = false;
+for (let i = 0; i <= 9; i++) {
+    if (heslo.includes(i)) {
+        hesloCislo = true;
+    }
+}
+if (heslo.length < 6) {
+    window.alert(`Heslo musí mít alespoň 6 znaků mrtko!!`);
+} else if (!hesloCislo) {
+    window.alert(`Heslo musí obsahovat číslici!`);
+}
+
 const datum = new Date();
 console.log(`Funguje!`);
 
@@ -9,71 +32,65 @@ let tah = `Souhrn losovaných čísel Yzovo loterie jsou: `;
 let verifikace = false;
 let verifikacniCislo;
 
-
 function generujVerifikacniCislo() {
-  return Math.floor(Math.random() * 1000 + 1);
+    return Math.floor(Math.random() * 1000 + 1);
 }
 
 verifikacniCislo = generujVerifikacniCislo();
 
 while (!verifikace) {
-  const uzivatelskeCislo = window.prompt(`Proveď ověření zadáním následujícího čísla: ${verifikacniCislo}`);
+    const uzivatelskeCislo = window.prompt(`Proveď ověření zadáním následujícího čísla: ${verifikacniCislo}`);
 
-  if (uzivatelskeCislo && Number(uzivatelskeCislo) === verifikacniCislo) {
-    window.alert(`Verifikace úspěšná! Pokračujeme.`);
-    verifikace = true;
-  } else {
-    window.alert(`Verifikace selhala. Zkus to znovu.`);
-    verifikacniCislo = generujVerifikacniCislo();
-  }
+    if (uzivatelskeCislo && Number(uzivatelskeCislo) === verifikacniCislo) {
+        window.alert(`Verifikace úspěšná! Pokračujeme.`);
+        verifikace = true;
+    } else {
+        window.alert(`Verifikace selhala. Zkus to znovu.`);
+        verifikacniCislo = generujVerifikacniCislo();
+    }
 }
 
 window.alert(`Jsi na živu už ${Math.floor((Date.parse(datum) - Date.parse(new Date(narozeni))) / (1000 * 60 * 60 * 24))} dní. Tvoje šťastné číslo pro dnešní den je ${Math.floor(Math.random() * 100 + 1)}.`);
 
-
 const MINIMUM = 15;
 const MAXIMUM = 100;
 
-const nameOfPlayer = window.prompt(`Jak se jmenuješ, příteli?`, `Yzo`);
+let nameOfPlayer = window.prompt(`Jak se jmenuješ, příteli?`, `Yzo`).trim();
 window.alert(`Vítám tě, ${nameOfPlayer}, zajímá tě to, co je neznámé, tajemné, nevysvětlitelné, proto jsi přece tady. A my teď poprvé řekneme celou pravdu o tom, co se stalo.`);
 
 const jeZena = window.confirm(`Jsi žena?`);
 if (jeZena) {
-    let birthYear = window.prompt(`V kterém roce jsi se narodila?`);
-    let vekUzivatele = 2023 - birthYear;
-
-    const narozeniny = !window.confirm(`Měla jsi už tenhle rok narozeniny? :SMIRK:`);
-    if (!narozeniny) {
-        vekUzivatele--;
-    }
-
-    if (vekUzivatele >= MINIMUM && vekUzivatele < MAXIMUM) {
-        window.alert(`VÍTEJ ŽENO`);
+    let birthYear = window.prompt(`V kterém roce jsi se narodila?`).trim();
+    if (isNaN(birthYear) || birthYear.length !== 4) {
+        window.alert(`Zadej platný rok narození.`);
     } else {
-        if (!isNaN(vekUzivatele)) {
-            window.alert(`Hej ale ty sem nelez, to bys psychicky nemusela zvládnout`);
+        let vekUzivatele = 2023 - parseInt(birthYear, 10);
+
+        const narozeniny = !window.confirm(`Měla jsi už tenhle rok narozeniny? :SMIRK:`);
+        if (!narozeniny) {
+            vekUzivatele--;
+        }
+
+        if (vekUzivatele >= MINIMUM && vekUzivatele < MAXIMUM) {
+            window.alert(`VÍTEJ ŽENO`);
         } else {
-            window.alert(`Hej ${vekUzivatele} naughty naughty!! Tohle není číslo, za trest tě pošlu na google `);
-            window.location.replace(`https://google.com`);
+            window.alert(`Hej ale ty sem nelez, to bys psychicky nemusela zvládnout`);
         }
     }
 } else {
     window.alert(`VÍTEJ MUŽI, JELIKOŽ JSI MUŽ, TAK NEMUSÍŠ NIC ZADÁVAT :-)`);
 }
 
-let vekUzivatele2 = window.prompt('Kolik ti je let?', 69);
-
-if (Number(vekUzivatele2) >= MINIMUM) {
+let vekUzivatele2 = window.prompt('Kolik ti je let?', 69).trim();
+if (isNaN(vekUzivatele2) || vekUzivatele2.length === 0) {
+    window.alert(`Zadej platný věk.`);
+} else if (Number(vekUzivatele2) >= MINIMUM) {
     window.alert(`Můžeš na web moreee, je ti o ${vekUzivatele2 - MINIMUM} víc než ${MINIMUM} let yoloooo!`);
 } else {
-    if (!isNaN(vekUzivatele2)) {
-        window.alert(`Ty nezbedo! Sem nelez more.. Do dosažení povoleného věku ti zbývá  ${MINIMUM - vekUzivatele2} let!!11`);
-    } else {
-        window.alert(`Strouhám strouhám strouhám sýr to je gouda  tohle není číslo, jdi do piči ty moulo!!!`);
-    }
+    window.alert(`Strouhám strouhám strouhám sýr to je gouda tohle není číslo, jdi do piči ty moulo!!!`);
 }
 
-window.alert(`Před tím, než tě pustím, zahlásíme výsledky Yzovo loterie!!!`)
+window.alert(`Před tím, než tě pustím, zahlásíme výsledky Yzovo loterie!!!`);
 
 for (let index = 0; index < 6; index++) {
     const cislo = Math.floor(Math.random() * 60);
