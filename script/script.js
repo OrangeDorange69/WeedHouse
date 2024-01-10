@@ -100,4 +100,10 @@ for (let index = 0; index < 6; index++) {
 
 window.alert(tah);
 
+const randomShit = ["VVS Chain", "Gold Chain", "Lowe na kapse", "Medical", "LV Pants", "Coco", "Hash", "Číčko"];
+
+const randomVec = randomShit[Math.floor(Math.random() * randomShit.length)];
+
+window.alert(`Vybrali jsme pro tebe random Yzovo item: ${randomVec}`);
+
 console.log(`Rare jako supreme drop`);
