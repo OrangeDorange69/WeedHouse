@@ -100,9 +100,20 @@ for (let index = 0; index < 6; index++) {
 
 window.alert(tah);
 
+
 const randomShit = ["VVS Chain", "Gold Chain", "Lowe na kapse", "Medical", "LV Pants", "Coco", "Hash", "Číčko"];
 
+let processedItems = "";
+randomShit.forEach((element, index) => {
+    processedItems += `Itemy ${index + 1}: ${element}\n`;
+});
+
 const randomVec = randomShit[Math.floor(Math.random() * randomShit.length)];
+
+window.alert(`Vybrali jsme pro tebe random Yzovo item:\n${randomVec}\n\nItem Nika:\n${processedItems}`);
+
+console.log(`Rare jako supreme drop`);
+
 
 window.alert(`Vybrali jsme pro tebe random Yzovo item: ${randomVec}`);
 
