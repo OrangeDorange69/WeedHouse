@@ -110,11 +110,6 @@ randomShit.forEach((element, index) => {
 
 const randomVec = randomShit[Math.floor(Math.random() * randomShit.length)];
 
-window.alert(`Vybrali jsme pro tebe random Yzovo item:\n${randomVec}\n\nItem Nika:\n${processedItems}`);
-
-console.log(`Rare jako supreme drop`);
-
-
-window.alert(`Vybrali jsme pro tebe random Yzovo item: ${randomVec}`);
+window.alert(`Vybrali jsme pro tebe random Yzovo item:\n${randomVec}\n\nItemy co můžeš dostat:\n${processedItems}`);
 
 console.log(`Rare jako supreme drop`);
