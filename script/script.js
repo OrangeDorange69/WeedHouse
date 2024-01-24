@@ -112,4 +112,30 @@ const randomVec = randomShit[Math.floor(Math.random() * randomShit.length)];
 
 window.alert(`Vybrali jsme pro tebe random Yzovo item:\n${randomVec}\n\nItemy co můžeš dostat:\n${processedItems}`);
 
+const generateRandomWord = () => {
+    const getRandomElement = (array) => array[Math.floor(Math.random() * array.length)];
+
+    const consonants = "bcčdďfghjklmnňpqrřsštťvwxzž";
+    const vowels = "aeiouyáéěíóúý";
+
+    const getRandomConsonant = () => getRandomElement(consonants.split(''));
+    const getRandomVowel = () => getRandomElement(vowels.split(''));
+
+    const wordLength = parseInt(validateInput(
+        "Představuji generátor náhodných rap slov, napiš jak dlouhé má být tvé slovo:",
+        (input) => !isNaN(input) && input > 0,
+        "PROSÍM, DEJ SEM KLADNÉ ČÍSLO VOLE!!!."
+    ), 10);
+
+    let randomWord = "";
+
+    for (let i = 0; i < wordLength; i++) {
+        randomWord += i % 2 === 0 ? getRandomConsonant() : getRandomVowel();
+    }
+
+    window.alert(`Generátor náhodných rap slov vybral slovo: ${randomWord}`);
+};
+
+generateRandomWord();
+
 console.log(`Rare jako supreme drop`);
