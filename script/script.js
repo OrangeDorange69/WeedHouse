@@ -121,11 +121,18 @@ const generateRandomWord = () => {
     const getRandomConsonant = () => getRandomElement(consonants.split(''));
     const getRandomVowel = () => getRandomElement(vowels.split(''));
 
-    const wordLength = parseInt(validateInput(
-        "Představuji generátor náhodných rap slov, napiš jak dlouhé má být tvé slovo:",
-        (input) => !isNaN(input) && input > 0,
-        "PROSÍM, DEJ SEM KLADNÉ ČÍSLO VOLE!!!."
-    ), 10);
+    let wordLength;
+
+    do {
+        const userInput = prompt("Představuji generátor náhodných rap slov, napiš jak dlouhé má být tvé slovo:");
+
+        if (userInput === null) {
+            return;
+        }
+
+        wordLength = parseInt(userInput, 10);
+
+    } while (isNaN(wordLength) || wordLength <= 0);
 
     let randomWord = "";
 
