@@ -156,16 +156,17 @@ for (let index = 0; index < 6; index++) {
 
 showAlert(tah);
 
-const randomShit = ["VVS Chain", "Gold Chain", "Lowe na kapse", "Medical", "LV Pants", "Coco", "Hash", "Číčko"];
+const itemsData = {
+    randomItems: ["VVS Chain", "Gold Chain", "Lowe na kapse", "Medical", "LV Pants", "Coco", "Hash", "Číčko"],
+    selectedRandomItem: getRandomItem(itemsData.randomItems),
+};
 
 let processedItems = "";
-randomShit.forEach((element, index) => {
+itemsData.randomItems.forEach((element, index) => {
     processedItems += `Itemy ${index + 1}: ${element}\n`;
 });
 
-const randomVec = getRandomItem(randomShit);
-
-showAlert(`Vybrali jsme pro tebe random Yzovo item:\n${randomVec}\n\nItemy co můžeš dostat:\n${processedItems}`);
+showAlert(`Vybrali jsme pro tebe random Yzovo item:\n${itemsData.selectedRandomItem}\n\nItemy co můžeš dostat:\n${processedItems}`);
 
 generateRandomWord();
 
