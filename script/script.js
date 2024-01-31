@@ -1,118 +1,33 @@
-let uzivatel = window.prompt(`Zadej svoje uživatelské jméno, vole?`).trim();
-if (uzivatel.includes(` `) || uzivatel.length === 0) {
-    window.alert(`Uživatelské jméno nesmí mít mezery nebo být prázdné, moulo.`);
+function getUserInput(promptMessage) {
+    return window.prompt(promptMessage).trim();
 }
 
-let email = window.prompt(`Jaký máš mail, HMM?`).trim();
-if (email.indexOf(`@`) < 1 || email.indexOf(`@`) === email.length - 1 || email.length === 0) {
-    window.alert(`Email není platný.`);
+function showAlert(message) {
+    window.alert(message);
 }
 
-let heslo = window.prompt(`Zadejte heslo!`).trim();
-let hesloCislo = false;
-for (let i = 0; i <= 9; i++) {
-    if (heslo.includes(i)) {
-        hesloCislo = true;
-    }
-}
-if (heslo.length < 6) {
-    window.alert(`Heslo musí mít alespoň 6 znaků mrtko!!`);
-} else if (!hesloCislo) {
-    window.alert(`Heslo musí obsahovat číslici!`);
-}
-
-const datum = new Date();
-console.log(`Funguje!`);
-
-window.alert(`Vítej v naší hře na poctu Yzovi! Tvůrci: Džon, Advy, Dejvis :) v. T-1.0 [JS TESTING] - Džony branch`);
-
-const narozeni = window.prompt(`Dneska je ${datum.getDate()}. ${datum.getMonth() + 1}. ${datum.getFullYear()}, zadej své datum narození ve formátu YYYY-MM-DD`, `YYYY-MM-DD`);
-
-let tah = `Souhrn losovaných čísel Yzovo loterie jsou: `;
-let verifikace = false;
-let verifikacniCislo;
-
-function generujVerifikacniCislo() {
+function generateVerificationCode() {
     return Math.floor(Math.random() * 1000 + 1);
 }
 
-verifikacniCislo = generujVerifikacniCislo();
-
-while (!verifikace) {
-    const uzivatelskeCislo = window.prompt(`Proveď ověření zadáním následujícího čísla: ${verifikacniCislo}`);
-
-    if (uzivatelskeCislo && Number(uzivatelskeCislo) === verifikacniCislo) {
-        window.alert(`Verifikace úspěšná! Pokračujeme.`);
-        verifikace = true;
-    } else {
-        window.alert(`Verifikace selhala. Zkus to znovu.`);
-        verifikacniCislo = generujVerifikacniCislo();
-    }
+function verifyCode(code) {
+    return window.prompt(`Proveď ověření zadáním následujícího čísla: ${code}`);
 }
 
-window.alert(`Jsi na živu už ${Math.floor((Date.parse(datum) - Date.parse(new Date(narozeni))) / (1000 * 60 * 60 * 24))} dní. Tvoje šťastné číslo pro dnešní den je ${Math.floor(Math.random() * 100 + 1)}.`);
-
-const MINIMUM = 15;
-const MAXIMUM = 100;
-
-let nameOfPlayer = window.prompt(`Jak se jmenuješ, příteli?`, `Yzo`).trim();
-window.alert(`Vítám tě, ${nameOfPlayer}, zajímá tě to, co je neznámé, tajemné, nevysvětlitelné, proto jsi přece tady. A my teď poprvé řekneme celou pravdu o tom, co se stalo.`);
-
-const jeZena = window.confirm(`Jsi žena?`);
-if (jeZena) {
-    let birthYear = window.prompt(`V kterém roce jsi se narodila?`).trim();
-    if (isNaN(birthYear) || birthYear.length !== 4) {
-        window.alert(`Zadej platný rok narození.`);
-    } else {
-        let vekUzivatele = 2023 - parseInt(birthYear, 10);
-
-        const narozeniny = !window.confirm(`Měla jsi už tenhle rok narozeniny? :SMIRK:`);
-        if (!narozeniny) {
-            vekUzivatele--;
-        }
-
-        if (vekUzivatele >= MINIMUM && vekUzivatele < MAXIMUM) {
-            window.alert(`VÍTEJ ŽENO`);
-        } else {
-            window.alert(`Hej ale ty sem nelez, to bys psychicky nemusela zvládnout`);
-        }
-    }
-} else {
-    window.alert(`VÍTEJ MUŽI, JELIKOŽ JSI MUŽ, TAK NEMUSÍŠ NIC ZADÁVAT :-)`);
+function calculateDaysAlive(birthDate) {
+    const currentDate = new Date();
+    return Math.floor((currentDate - Date.parse(birthDate)) / (1000 * 60 * 60 * 24));
 }
 
-let vekUzivatele2 = window.prompt('Kolik ti je let?', 69).trim();
-if (isNaN(vekUzivatele2) || vekUzivatele2.length === 0) {
-    window.alert(`Zadej platný věk.`);
-} else if (Number(vekUzivatele2) >= MINIMUM) {
-    window.alert(`Můžeš na web moreee, je ti o ${vekUzivatele2 - MINIMUM} víc než ${MINIMUM} let yoloooo!`);
-} else {
-    window.alert(`Strouhám strouhám strouhám sýr to je gouda tohle není číslo, jdi do piči ty moulo!!!`);
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-window.alert(`Před tím, než tě pustím, zahlásíme výsledky Yzovo loterie!!!`);
-
-for (let index = 0; index < 6; index++) {
-    const cislo = Math.floor(Math.random() * 60);
-    window.alert (`A čísla Yzovo loterie jsou: ${index + 1}: ${cislo}`);
-    tah += `${cislo}, `;
+function getRandomItem(items) {
+    return items[Math.floor(Math.random() * items.length)];
 }
 
-window.alert(tah);
-
-
-const randomShit = ["VVS Chain", "Gold Chain", "Lowe na kapse", "Medical", "LV Pants", "Coco", "Hash", "Číčko"];
-
-let processedItems = "";
-randomShit.forEach((element, index) => {
-    processedItems += `Itemy ${index + 1}: ${element}\n`;
-});
-
-const randomVec = randomShit[Math.floor(Math.random() * randomShit.length)];
-
-window.alert(`Vybrali jsme pro tebe random Yzovo item:\n${randomVec}\n\nItemy co můžeš dostat:\n${processedItems}`);
-
-const generateRandomWord = () => {
+function generateRandomWord() {
     const getRandomElement = (array) => array[Math.floor(Math.random() * array.length)];
 
     const consonants = "bcčdďfghjklmnňpqrřsštťvwxzž";
@@ -140,8 +55,117 @@ const generateRandomWord = () => {
         randomWord += i % 2 === 0 ? getRandomConsonant() : getRandomVowel();
     }
 
-    window.alert(`Generátor náhodných rap slov vybral slovo: ${randomWord}`);
-};
+    showAlert(`Generátor náhodných rap slov vybral slovo: ${randomWord}`);
+}
+
+let uzivatel = getUserInput(`Zadej svoje uživatelské jméno, vole?`);
+if (uzivatel.includes(` `) || uzivatel.length === 0) {
+    showAlert(`Uživatelské jméno nesmí mít mezery nebo být prázdné, moulo.`);
+}
+
+let email = getUserInput(`Jaký máš mail, HMM?`);
+if (email.indexOf(`@`) < 1 || email.indexOf(`@`) === email.length - 1 || email.length === 0) {
+    showAlert(`Email není platný.`);
+}
+
+let heslo = getUserInput(`Zadejte heslo!`);
+let hesloCislo = false;
+for (let i = 0; i <= 9; i++) {
+    if (heslo.includes(i)) {
+        hesloCislo = true;
+    }
+}
+if (heslo.length < 6) {
+    showAlert(`Heslo musí mít alespoň 6 znaků mrtko!!`);
+} else if (!hesloCislo) {
+    showAlert(`Heslo musí obsahovat číslici!`);
+}
+
+const datum = new Date();
+console.log(`Funguje!`);
+
+showAlert(`Vítej v naší hře na poctu Yzovi! Tvůrci: Džon, Advy, Dejvis :) v. T-1.0 [JS TESTING] - Džony branch`);
+
+const narozeni = getUserInput(`Dneska je ${datum.getDate()}. ${datum.getMonth() + 1}. ${datum.getFullYear()}, zadej své datum narození ve formátu YYYY-MM-DD`, `YYYY-MM-DD`);
+
+let tah = `Souhrn losovaných čísel Yzovo loterie jsou: `;
+let verifikace = false;
+let verifikacniCislo;
+
+verifikacniCislo = generateVerificationCode();
+
+while (!verifikace) {
+    const uzivatelskeCislo = verifyCode(verifikacniCislo);
+
+    if (uzivatelskeCislo && Number(uzivatelskeCislo) === verifikacniCislo) {
+        showAlert(`Verifikace úspěšná! Pokračujeme.`);
+        verifikace = true;
+    } else {
+        showAlert(`Verifikace selhala. Zkus to znovu.`);
+        verifikacniCislo = generateVerificationCode();
+    }
+}
+
+showAlert(`Jsi na živu už ${calculateDaysAlive(narozeni)} dní. Tvoje šťastné číslo pro dnešní den je ${getRandomNumber(1, 100)}.`);
+
+const MINIMUM = 15;
+const MAXIMUM = 100;
+
+let nameOfPlayer = getUserInput(`Jak se jmenuješ, příteli?`, `Yzo`).trim();
+showAlert(`Vítám tě, ${nameOfPlayer}, zajímá tě to, co je neznámé, tajemné, nevysvětlitelné, proto jsi přece tady. A my teď poprvé řekneme celou pravdu o tom, co se stalo.`);
+
+const jeZena = window.confirm(`Jsi žena?`);
+if (jeZena) {
+    let birthYear = getUserInput(`V kterém roce jsi se narodila?`).trim();
+    if (isNaN(birthYear) || birthYear.length !== 4) {
+        showAlert(`Zadej platný rok narození.`);
+    } else {
+        let vekUzivatele = 2023 - parseInt(birthYear, 10);
+
+        const narozeniny = !window.confirm(`Měla jsi už tenhle rok narozeniny? :SMIRK:`);
+        if (!narozeniny) {
+            vekUzivatele--;
+        }
+
+        if (vekUzivatele >= MINIMUM && vekUzivatele < MAXIMUM) {
+            showAlert(`VÍTEJ ŽENO`);
+        } else {
+            showAlert(`Hej ale ty sem nelez, to bys psychicky nemusela zvládnout`);
+        }
+    }
+} else {
+    showAlert(`VÍTEJ MUŽI, JELIKOŽ JSI MUŽ, TAK NEMUSÍŠ NIC ZADÁVAT :-)`);
+}
+
+let vekUzivatele2 = getUserInput('Kolik ti je let?', 69).trim();
+if (isNaN(vekUzivatele2) || vekUzivatele2.length === 0) {
+    showAlert(`Zadej platný věk.`);
+} else if (Number(vekUzivatele2) >= MINIMUM) {
+    showAlert(`Můžeš na web moreee, je ti o ${vekUzivatele2 - MINIMUM} víc než ${MINIMUM} let yoloooo!`);
+} else {
+    showAlert(`Strouhám strouhám strouhám sýr to je gouda tohle není číslo, jdi do piči ty moulo!!!`);
+}
+
+showAlert(`Před tím, než tě pustím, zahlásíme výsledky Yzovo loterie!!!`);
+
+for (let index = 0; index < 6; index++) {
+    const cislo = getRandomNumber(1, 60);
+    showAlert(`A čísla Yzovo loterie jsou: ${index + 1}: ${cislo}`);
+    tah += `${cislo}, `;
+}
+
+showAlert(tah);
+
+const randomShit = ["VVS Chain", "Gold Chain", "Lowe na kapse", "Medical", "LV Pants", "Coco", "Hash", "Číčko"];
+
+let processedItems = "";
+randomShit.forEach((element, index) => {
+    processedItems += `Itemy ${index + 1}: ${element}\n`;
+});
+
+const randomVec = getRandomItem(randomShit);
+
+showAlert(`Vybrali jsme pro tebe random Yzovo item:\n${randomVec}\n\nItemy co můžeš dostat:\n${processedItems}`);
 
 generateRandomWord();
 
