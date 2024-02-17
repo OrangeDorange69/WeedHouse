@@ -63,11 +63,13 @@ if (uzivatel.includes(` `) || uzivatel.length === 0) {
     showAlert(`Uživatelské jméno nesmí mít mezery nebo být prázdné, moulo.`);
 }
 
+let emailInput = document.querySelector('#emailInput');
 let email = getUserInput(`Jaký máš mail, HMM?`);
 if (email.indexOf(`@`) < 1 || email.indexOf(`@`) === email.length - 1 || email.length === 0) {
     showAlert(`Email není platný.`);
 }
 
+let passwordInput = document.querySelector('#passwordInput');
 let heslo = getUserInput(`Zadejte heslo!`);
 let hesloCislo = false;
 for (let i = 0; i <= 9; i++) {
@@ -111,11 +113,13 @@ showAlert(`Jsi na živu už ${calculateDaysAlive(narozeni)} dní. Tvoje šťastn
 const MINIMUM = 15;
 const MAXIMUM = 100;
 
+let nameInput = document.querySelector('#nameInput');
 let nameOfPlayer = getUserInput(`Jak se jmenuješ, příteli?`, `Yzo`).trim();
 showAlert(`Vítám tě, ${nameOfPlayer}, zajímá tě to, co je neznámé, tajemné, nevysvětlitelné, proto jsi přece tady. A my teď poprvé řekneme celou pravdu o tom, co se stalo.`);
 
 const jeZena = window.confirm(`Jsi žena?`);
 if (jeZena) {
+    let birthYearInput = document.querySelector('#birthYearInput');
     let birthYear = getUserInput(`V kterém roce jsi se narodila?`).trim();
     if (isNaN(birthYear) || birthYear.length !== 4) {
         showAlert(`Zadej platný rok narození.`);
@@ -137,6 +141,7 @@ if (jeZena) {
     showAlert(`VÍTEJ MUŽI, JELIKOŽ JSI MUŽ, TAK NEMUSÍŠ NIC ZADÁVAT :-)`);
 }
 
+let ageInput = document.querySelector('#ageInput');
 let vekUzivatele2 = getUserInput('Kolik ti je let?', 69).trim();
 if (isNaN(vekUzivatele2) || vekUzivatele2.length === 0) {
     showAlert(`Zadej platný věk.`);
