@@ -175,7 +175,7 @@ showAlert(`Vybrali jsme pro tebe random Yzovo item:\n${itemsData.selectedRandomI
 
 generateRandomWord();
 
-var imgElement = document.querySelector('h1#nameofUser img');
+var imgElement = document.querySelector('#nameofUser img');
 
 if (imgElement) {
     imgElement.src = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fchocolate-chip-cookie-icon&psig=AOvVaw0E6Pkob0gmKhuaOzRJ2Eai&ust=1708589473846000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjc8Iv-u4QDFQAAAAAdAAAAABAK";
