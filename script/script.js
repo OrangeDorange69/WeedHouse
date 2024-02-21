@@ -184,11 +184,7 @@ generateRandomWord();
 const imgElement = document.querySelector('img[src="./cookie.png"]');
 
 if (imgElement) {
-  console.log('found', imgElement);
   imgElement.src = 'https://www.shutterstock.com/image-vector/happy-smiling-kawaii-cute-cookie-600nw-2315585199.jpg';
-  console.log('updated:', imgElement.src);
-} else {
-  console.log('not found="./cookie.png"');
 }
 
 
