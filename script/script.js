@@ -178,7 +178,7 @@ generateRandomWord();
 const imgElement = document.querySelector('img[src="./cookie.png"]');
 
 if (imgElement) {
-  imgElement.src = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fchocolate-chip-cookie-icon&psig=AOvVaw0E6Pkob0gmKhuaOzRJ2Eai&ust=1708589473846000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjc8Iv-u4QDFQAAAAAdAAAAABAK';
+  imgElement.src = 'https://www.shutterstock.com/image-vector/happy-smiling-kawaii-cute-cookie-600nw-2315585199.jpg';
 }
 
 
