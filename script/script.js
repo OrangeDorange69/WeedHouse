@@ -163,15 +163,21 @@ showAlert(tah);
 
 const itemsData = {
     randomItems: ["VVS Chain", "Gold Chain", "Lowe na kapse", "Medical", "LV Pants", "Coco", "Hash", "Číčko"],
-    selectedRandomItem: getRandomItem(itemsData.randomItems),
+    selectedRandomItem: getRandomItem([]),
 };
 
-let processedItems = "";
-itemsData.randomItems.forEach((element, index) => {
-    processedItems += `Itemy ${index + 1}: ${element}\n`;
-});
+function initializeItemsData() {
+    itemsData.selectedRandomItem = getRandomItem(itemsData.randomItems);
 
-showAlert(`Vybrali jsme pro tebe random Yzovo item:\n${itemsData.selectedRandomItem}\n\nItemy co můžeš dostat:\n${processedItems}`);
+    let processedItems = "";
+    itemsData.randomItems.forEach((element, index) => {
+        processedItems += `Itemy ${index + 1}: ${element}\n`;
+    });
+
+    showAlert(`Vybrali jsme pro tebe random Yzovo item:\n${itemsData.selectedRandomItem}\n\nItemy co můžeš dostat:\n${processedItems}`);
+}
+
+initializeItemsData();
 
 generateRandomWord();
 
