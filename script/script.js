@@ -143,7 +143,9 @@ if (jeZena) {
 
 let ageInput = document.querySelector('#ageInput');
 let vekUzivatele2 = getUserInput('Kolik ti je let?', 69).trim();
-if (isNaN(vekUzivatele2) || vekUzivatele2.length === 0) {
+if (isNaN(vekUz
+
+ivatele2) || vekUzivatele2.length === 0) {
     showAlert(`Zadej platný věk.`);
 } else if (Number(vekUzivatele2) >= MINIMUM) {
     showAlert(`Můžeš na web moreee, je ti o ${vekUzivatele2 - MINIMUM} víc než ${MINIMUM} let yoloooo!`);
@@ -193,6 +195,5 @@ const imgElement = document.querySelector('img[src="./cookie.png"]');
 if (imgElement) {
   imgElement.src = 'https://www.shutterstock.com/image-vector/happy-smiling-kawaii-cute-cookie-600nw-2315585199.jpg';
 }
-
 
 console.log(`Rare jako supreme drop`);
