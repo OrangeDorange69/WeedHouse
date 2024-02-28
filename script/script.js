@@ -143,9 +143,7 @@ if (jeZena) {
 
 let ageInput = document.querySelector('#ageInput');
 let vekUzivatele2 = getUserInput('Kolik ti je let?', 69).trim();
-if (isNaN(vekUz
-
-ivatele2) || vekUzivatele2.length === 0) {
+if (isNaN(vekUzivatele2) || vekUzivatele2.length === 0) {
     showAlert(`Zadej platný věk.`);
 } else if (Number(vekUzivatele2) >= MINIMUM) {
     showAlert(`Můžeš na web moreee, je ti o ${vekUzivatele2 - MINIMUM} víc než ${MINIMUM} let yoloooo!`);
