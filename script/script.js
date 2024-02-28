@@ -171,7 +171,7 @@ function initializeItemsData() {
 
     let processedItems = "";
     itemsData.randomItems.forEach((element, index) => {
-        processedItems += `Itemy ${index + 1}: ${element}<br>`;
+        processedItems += `Itemy ${index + 1}: ${element}ㅤ`;
     });
 
     let itemInfoDiv = document.getElementById("itemInfo");
