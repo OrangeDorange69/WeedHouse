@@ -1,11 +1,9 @@
-function showAlert(message) {
-    const outputElement = document.getElementById('nameofUser');
-    outputElement.textContent = message;
+function getUserInput(promptMessage) {
+    return window.prompt(promptMessage).trim();
 }
 
-function getUserInput(promptMessage, defaultValue = '') {
-    const userInput = prompt(promptMessage, defaultValue);
-    return userInput ? userInput.trim() : '';
+function showAlert(message) {
+    window.alert(message);
 }
 
 function generateVerificationCode() {
@@ -13,7 +11,7 @@ function generateVerificationCode() {
 }
 
 function verifyCode(code) {
-    return prompt(`Proveď ověření zadáním následujícího čísla: ${code}`);
+    return window.prompt(`Proveď ověření zadáním následujícího čísla: ${code}`);
 }
 
 function calculateDaysAlive(birthDate) {
@@ -35,10 +33,13 @@ function generateRandomWord() {
     const consonants = "bcčdďfghjklmnňpqrřsštťvwxzž";
     const vowels = "aeiouyáéěíóúý";
 
+    const getRandomConsonant = () => getRandomElement(consonants.split(''));
+    const getRandomVowel = () => getRandomElement(vowels.split(''));
+
     let wordLength;
 
     do {
-        const userInput = getUserInput("Představuji generátor náhodných rap slov, napiš jak dlouhé má být tvé slovo:");
+        const userInput = prompt("Představuji generátor náhodných rap slov, napiš jak dlouhé má být tvé slovo:");
 
         if (userInput === null) {
             return;
@@ -51,7 +52,7 @@ function generateRandomWord() {
     let randomWord = "";
 
     for (let i = 0; i < wordLength; i++) {
-        randomWord += i % 2 === 0 ? getRandomElement(consonants.split('')) : getRandomElement(vowels.split(''));
+        randomWord += i % 2 === 0 ? getRandomConsonant() : getRandomVowel();
     }
 
     showAlert(`Generátor náhodných rap slov vybral slovo: ${randomWord}`);
@@ -185,5 +186,6 @@ const imgElement = document.querySelector('img[src="./cookie.png"]');
 if (imgElement) {
   imgElement.src = 'https://www.shutterstock.com/image-vector/happy-smiling-kawaii-cute-cookie-600nw-2315585199.jpg';
 }
+
 
 console.log(`Rare jako supreme drop`);
