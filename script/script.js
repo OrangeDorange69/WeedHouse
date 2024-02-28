@@ -176,7 +176,7 @@ function initializeItemsData() {
 
     let itemInfoDiv = document.getElementById("itemInfo");
 
-    itemInfoDiv.innerHTML = `Vybrali jsme pro tebe random Yzovo item:<br>${itemsData.selectedRandomItem}<br><br>Itemy co můžeš dostat:<br>${processedItems}`;
+    itemInfoDiv.innerHTML = `Vybrali jsme pro tebe random Yzovo item:<br>${itemsData.selectedRandomItem}Itemy co můžeš dostat:${processedItems}`;
     itemInfoDiv.textContent = `Vybrali jsme pro tebe random Yzovo item:\n${itemsData.selectedRandomItem}\n\nItemy co můžeš dostat:\n${processedItems}`;
 }
 
