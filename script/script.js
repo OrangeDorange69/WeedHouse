@@ -171,10 +171,17 @@ function initializeItemsData() {
 
     let processedItems = "";
     itemsData.randomItems.forEach((element, index) => {
-        processedItems += `Itemy ${index + 1}: ${element}\n`;
+        processedItems += `Itemy ${index + 1}: ${element}<br>`;
     });
 
-    showAlert(`Vybrali jsme pro tebe random Yzovo item:\n${itemsData.selectedRandomItem}\n\nItemy co můžeš dostat:\n${processedItems}`);
+    let itemInfoDiv = document.getElementById("itemInfo");
+
+    itemInfoDiv.innerHTML = `Vybrali jsme pro tebe random Yzovo item:<br>${itemsData.selectedRandomItem}<br><br>Itemy co můžeš dostat:<br>${processedItems}`;
+    itemInfoDiv.textContent = `Vybrali jsme pro tebe random Yzovo item:\n${itemsData.selectedRandomItem}\n\nItemy co můžeš dostat:\n${processedItems}`;
+}
+
+function getRandomItem(items) {
+    return items[Math.floor(Math.random() * items.length)];
 }
 
 initializeItemsData();
