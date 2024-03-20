@@ -194,6 +194,6 @@ const imgElement = document.getElementById('cookie');
 imgElement.addEventListener('click', function() {
   imgElement.src = 'https://www.shutterstock.com/image-vector/happy-smiling-kawaii-cute-cookie-600nw-2315585199.jpg';
   imgElement.classList.add('clicked');
-}
+});
 
 console.log(`Rare jako supreme drop`);
