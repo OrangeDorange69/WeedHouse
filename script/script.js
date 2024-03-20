@@ -138,7 +138,7 @@ if (jeZena) {
         }
     }
 } else {
-    showAlert(`VÍTEJ MUŽI, JELIKOŽ JSI MUŽ, TAK NEMUSÍŠ NIC ZADÁVAT :-)`);
+    showAlert(`VÍTEJ MUŽI, JELIKOŽ JSI MUŽ, TAK NEMUSÍÍŠ NIC ZADÁVAT :-)`);
 }
 
 let ageInput = document.querySelector('#ageInput');
@@ -147,11 +147,14 @@ if (isNaN(vekUzivatele2) || vekUzivatele2.length === 0) {
     showAlert(`Zadej platný věk.`);
 } else if (Number(vekUzivatele2) >= MINIMUM) {
     showAlert(`Můžeš na web moreee, je ti o ${vekUzivatele2 - MINIMUM} víc než ${MINIMUM} let yoloooo!`);
+    ageInput.classList.add('valid');
 } else {
     showAlert(`Strouhám strouhám strouhám sýr to je gouda tohle není číslo, jdi do piči ty moulo!!!`);
+    ageInput.classList.add('invalid');
 }
 
 showAlert(`Před tím, než tě pustím, zahlásíme výsledky Yzovo loterie!!!`);
+
 
 for (let index = 0; index < 6; index++) {
     const cislo = getRandomNumber(1, 60);
