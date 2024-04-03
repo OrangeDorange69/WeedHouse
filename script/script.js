@@ -196,8 +196,6 @@ imgElement.addEventListener('click', function() {
   imgElement.classList.add('clicked');
 });
 
-Pro přidání dynamické generace HTML můžeme využít JavaScript. Zde je úprava kódu tak, aby se dynamicky vytvářely prvky HTML:
-
 const obrazek = document.createElement('img');
 obrazek.src = 'https://staticg.sportskeeda.com/editor/2023/07/6a307-16895111220429-1920.jpg';
 obrazek.classList.add('img-thumbnail');
