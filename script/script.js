@@ -196,4 +196,19 @@ imgElement.addEventListener('click', function() {
   imgElement.classList.add('clicked');
 });
 
+Pro přidání dynamické generace HTML můžeme využít JavaScript. Zde je úprava kódu tak, aby se dynamicky vytvářely prvky HTML:
+
+const obrazek = document.createElement('img');
+obrazek.src = 'https://staticg.sportskeeda.com/editor/2023/07/6a307-16895111220429-1920.jpg';
+obrazek.classList.add('img-thumbnail');
+
+document.body.appendChild(obrazek);
+
+const imgToRemove = document.querySelector('img.img-thumbnail');
+if (imgToRemove) {
+    imgToRemove.parentNode.removeChild(imgToRemove);
+}
+
+Tento kód vytvoří obrázek s třídou `img-thumbnail` a přidá ho do těla dokumentu. Pokud chcete odstranit tento obrázek, můžete použít Query Selector k nalezení prvku a následně ho odstranit z jeho rodiče.
+
 console.log(`Rare jako supreme drop`);
