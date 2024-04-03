@@ -207,6 +207,4 @@ if (imgToRemove) {
     imgToRemove.parentNode.removeChild(imgToRemove);
 }
 
-Tento kód vytvoří obrázek s třídou `img-thumbnail` a přidá ho do těla dokumentu. Pokud chcete odstranit tento obrázek, můžete použít Query Selector k nalezení prvku a následně ho odstranit z jeho rodiče.
-
 console.log(`Rare jako supreme drop`);
